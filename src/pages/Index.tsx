@@ -1,16 +1,12 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Calendar, Star, MapPin, Palette } from "lucide-react";
 import { Link } from "react-router-dom";
 import { demoArtisans } from "@/data/artisans";
-
 const Index = () => {
   const featuredArtisans = demoArtisans.slice(0, 3);
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto text-center">
@@ -34,7 +30,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-slate-50">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Why Choose Bangla Artisan Hub?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -94,15 +90,10 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {featuredArtisans.map((artisan) => (
-              <Card key={artisan.id} className="group hover:shadow-lg transition-shadow">
+            {featuredArtisans.map(artisan => <Card key={artisan.id} className="group hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center space-x-4">
-                    <img
-                      src={artisan.avatar}
-                      alt={artisan.name}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
+                    <img src={artisan.avatar} alt={artisan.name} className="w-16 h-16 rounded-full object-cover" />
                     <div>
                       <CardTitle className="text-lg">{artisan.name}</CardTitle>
                       <div className="flex items-center space-x-2 text-sm text-gray-600">
@@ -119,19 +110,16 @@ const Index = () => {
                 <CardContent>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">{artisan.bio}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {artisan.specialties.slice(0, 2).map((specialty) => (
-                      <Badge key={specialty} variant="secondary" className="text-xs">
+                    {artisan.specialties.slice(0, 2).map(specialty => <Badge key={specialty} variant="secondary" className="text-xs">
                         {specialty}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                   <div className="flex items-center justify-between text-sm text-gray-500">
                     <span>{artisan.experience} experience</span>
                     <span>{artisan.totalWorks} works</span>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -176,8 +164,6 @@ const Index = () => {
           </Button>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
