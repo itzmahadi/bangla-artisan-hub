@@ -81,8 +81,4 @@
     "vite": "^5.4.1"
   }
 }
-"homepage": "https://itzmahadi.github.io/bangla-artisan-hub",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
+
