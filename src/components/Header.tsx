@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -7,25 +6,23 @@ import { useAuth } from '@/contexts/AuthContext';
 import { AuthDialog } from './AuthDialog';
 import { LogOut, User, Settings, Crown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 export function Header() {
-  const { user, logout } = useAuth();
+  const {
+    user,
+    logout
+  } = useAuth();
   const [authDialogOpen, setAuthDialogOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
-
   const openLogin = () => {
     setAuthMode('login');
     setAuthDialogOpen(true);
   };
-
   const openRegister = () => {
     setAuthMode('register');
     setAuthDialogOpen(true);
   };
-
-  return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+  return <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between bg-lime-50">
         <div className="flex items-center space-x-8">
           <Link to="/" className="flex items-center space-x-2">
             <div className="h-8 w-8 rounded-full bg-gradient-to-br from-orange-400 to-red-600"></div>
@@ -46,8 +43,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
-          {user ? (
-            <DropdownMenu>
+          {user ? <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                   <Avatar className="h-10 w-10">
@@ -86,25 +82,17 @@ export function Header() {
                   <span>Log out</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <div className="flex items-center space-x-2">
+            </DropdownMenu> : <div className="flex items-center space-x-2">
               <Button variant="ghost" onClick={openLogin}>
                 Sign In
               </Button>
               <Button onClick={openRegister}>
                 Join Us
               </Button>
-            </div>
-          )}
+            </div>}
         </div>
       </div>
 
-      <AuthDialog 
-        open={authDialogOpen} 
-        onOpenChange={setAuthDialogOpen}
-        defaultMode={authMode}
-      />
-    </header>
-  );
+      <AuthDialog open={authDialogOpen} onOpenChange={setAuthDialogOpen} defaultMode={authMode} />
+    </header>;
 }
