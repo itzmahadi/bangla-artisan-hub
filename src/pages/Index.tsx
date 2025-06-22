@@ -1,18 +1,14 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Calendar, Star, MapPin, Palette, Brush, Scissors } from "lucide-react";
 import { Link } from "react-router-dom";
 import { demoArtisans } from "@/data/artisans";
-
 const Index = () => {
   const featuredArtisans = demoArtisans.slice(0, 3);
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/50">
+      <section className="relative py-24 px-4 bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/50 bg-orange-100">
         <div className="container mx-auto text-center">
           <div className="mb-8">
             <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full mb-6">
@@ -46,13 +42,13 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-16 artisan-text-primary">Why Choose Bangla Artisan Hub?</h2>
           <div className="grid md:grid-cols-3 gap-10">
             <Card className="artisan-card text-center border-0 shadow-lg">
-              <CardHeader className="pb-4">
+              <CardHeader className="pb-4 bg-amber-200">
                 <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Heart className="h-10 w-10 text-primary" />
                 </div>
                 <CardTitle className="text-xl artisan-text-primary">Authentic Craftsmanship</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-amber-500">
                 <CardDescription className="artisan-text-secondary text-base leading-relaxed">
                   Every piece tells a story of traditional Bengali craftsmanship passed down through generations of skilled artisans.
                 </CardDescription>
@@ -60,7 +56,7 @@ const Index = () => {
             </Card>
 
             <Card className="artisan-card text-center border-0 shadow-lg">
-              <CardHeader className="pb-4">
+              <CardHeader className="pb-4 bg-amber-200">
                 <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Users className="h-10 w-10 text-primary" />
                 </div>
@@ -74,7 +70,7 @@ const Index = () => {
             </Card>
 
             <Card className="artisan-card text-center border-0 shadow-lg">
-              <CardHeader className="pb-4">
+              <CardHeader className="pb-4 bg-amber-200">
                 <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-10 w-10 text-primary" />
                 </div>
@@ -101,16 +97,11 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {featuredArtisans.map((artisan) => (
-              <Card key={artisan.id} className="artisan-card group hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden">
+            {featuredArtisans.map(artisan => <Card key={artisan.id} className="artisan-card group hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden">
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-4">
                     <div className="relative">
-                      <img 
-                        src={artisan.avatar} 
-                        alt={artisan.name} 
-                        className="w-16 h-16 rounded-2xl object-cover ring-2 ring-stone-200" 
-                      />
+                      <img src={artisan.avatar} alt={artisan.name} className="w-16 h-16 rounded-2xl object-cover ring-2 ring-stone-200" />
                       <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
                         <Brush className="h-3 w-3 text-white" />
                       </div>
@@ -131,19 +122,16 @@ const Index = () => {
                 <CardContent className="pt-0">
                   <p className="artisan-text-secondary text-sm mb-4 line-clamp-2 leading-relaxed">{artisan.bio}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {artisan.specialties.slice(0, 2).map((specialty) => (
-                      <Badge key={specialty} variant="secondary" className="text-xs bg-amber-50 text-amber-700 border-amber-200">
+                    {artisan.specialties.slice(0, 2).map(specialty => <Badge key={specialty} variant="secondary" className="text-xs bg-amber-50 text-amber-700 border-amber-200">
                         {specialty}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                   <div className="flex items-center justify-between text-sm artisan-text-muted">
                     <span>{artisan.experience} experience</span>
                     <span>{artisan.totalWorks} works</span>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -190,8 +178,6 @@ const Index = () => {
           </Button>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
