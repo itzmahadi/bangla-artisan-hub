@@ -7,87 +7,87 @@
 
 @layer base {
   :root {
-    /* Warm, earthy tones inspired by natural clay and artisan materials */
-    --background: 254 252 247;
-    --foreground: 41 37 36;
+    /* Warm, earthy tones inspired by natural materials - NO YELLOW */
+    --background: 250 248 246;
+    --foreground: 28 25 23;
 
     --card: 255 255 255;
-    --card-foreground: 41 37 36;
+    --card-foreground: 28 25 23;
 
     --popover: 255 255 255;
-    --popover-foreground: 41 37 36;
+    --popover-foreground: 28 25 23;
 
-    /* Rich terracotta/clay primary color */
-    --primary: 120 53 15;
+    /* Deep forest green primary color */
+    --primary: 22 101 52;
     --primary-foreground: 255 255 255;
 
     /* Warm cream secondary */
-    --secondary: 251 247 240;
-    --secondary-foreground: 87 83 78;
+    --secondary: 245 242 240;
+    --secondary-foreground: 68 64 60;
 
-    --muted: 248 243 234;
-    --muted-foreground: 120 113 108;
+    --muted: 241 237 233;
+    --muted-foreground: 115 108 103;
 
-    /* Subtle bronze accent */
-    --accent: 146 64 14;
+    /* Muted brown accent */
+    --accent: 120 113 108;
     --accent-foreground: 255 255 255;
 
     --destructive: 220 38 38;
     --destructive-foreground: 255 255 255;
 
-    --border: 231 224 214;
-    --input: 231 224 214;
-    --ring: 120 53 15;
+    --border: 226 219 212;
+    --input: 226 219 212;
+    --ring: 22 101 52;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 254 252 247;
+    --sidebar-background: 250 248 246;
     --sidebar-foreground: 68 64 60;
-    --sidebar-primary: 120 53 15;
+    --sidebar-primary: 22 101 52;
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 251 247 240;
-    --sidebar-accent-foreground: 120 113 108;
-    --sidebar-border: 231 224 214;
-    --sidebar-ring: 120 53 15;
+    --sidebar-accent: 245 242 240;
+    --sidebar-accent-foreground: 115 108 103;
+    --sidebar-border: 226 219 212;
+    --sidebar-ring: 22 101 52;
   }
 
   .dark {
-    --background: 28 25 23;
+    --background: 24 24 27;
     --foreground: 250 250 249;
 
-    --card: 41 37 36;
+    --card: 39 39 42;
     --card-foreground: 250 250 249;
 
-    --popover: 41 37 36;
+    --popover: 39 39 42;
     --popover-foreground: 250 250 249;
 
-    --primary: 180 83 9;
+    --primary: 34 197 94;
     --primary-foreground: 255 255 255;
 
-    --secondary: 68 64 60;
+    --secondary: 63 63 70;
     --secondary-foreground: 250 250 249;
 
-    --muted: 68 64 60;
+    --muted: 63 63 70;
     --muted-foreground: 161 161 170;
 
-    --accent: 180 83 9;
+    --accent: 115 108 103;
     --accent-foreground: 255 255 255;
 
     --destructive: 239 68 68;
     --destructive-foreground: 250 250 249;
 
-    --border: 68 64 60;
-    --input: 68 64 60;
-    --ring: 180 83 9;
+    --border: 63 63 70;
+    --input: 63 63 70;
+    --ring: 34 197 94;
 
-    --sidebar-background: 28 25 23;
-    --sidebar-foreground: 231 229 228;
-    --sidebar-primary: 180 83 9;
+    --sidebar-background: 24 24 27;
+    --sidebar-foreground: 228 228 231;
+    --sidebar-primary: 34 197 94;
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 68 64 60;
-    --sidebar-accent-foreground: 231 229 228;
-    --sidebar-border: 68 64 60;
-    --sidebar-ring: 180 83 9;
+    --sidebar-accent: 63 63 70;
+    --sidebar-accent-foreground: 228 228 231;
+    --sidebar-border: 63 63 70;
+    --sidebar-ring: 34 197 94;
   }
 }
 
@@ -105,11 +105,11 @@
 /* Custom artisan-inspired styles */
 @layer components {
   .artisan-gradient {
-    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+    background: linear-gradient(135deg, #166534 0%, #15803d 100%);
   }
   
   .artisan-card {
-    @apply bg-white/90 backdrop-blur-sm border border-stone-200/60 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] hover:bg-white;
+    @apply bg-white/95 backdrop-blur-sm border border-stone-200/60 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] hover:bg-white;
   }
   
   .artisan-text-primary {
@@ -202,7 +202,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(45deg, #78350f, #92400e, #b45309);
+  background: linear-gradient(45deg, #166534, #15803d, #22c55e);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: xor;
   opacity: 0;

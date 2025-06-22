@@ -115,7 +115,7 @@ const Gallery = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-amber-50/30 to-orange-50/20">
+    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-slate-50/30 to-green-50/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page Header */}
         <div className="mb-8 text-center story-reveal">
@@ -203,7 +203,7 @@ const Gallery = () => {
                   <div className="flex space-x-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <Button size="sm" className="bg-white/90 text-primary hover:bg-white interactive-glow">
                       <Eye className="w-4 h-4 mr-1" />
-                      Explore Story
+                      View Story
                     </Button>
                     <Button size="sm" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
                       <Share2 className="w-4 h-4" />
@@ -231,7 +231,7 @@ const Gallery = () => {
                       {artwork.views}
                     </span>
                   </div>
-                  <span className="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full">
+                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
                     Cultural Heritage
                   </span>
                 </div>
@@ -239,7 +239,7 @@ const Gallery = () => {
                 <div className="space-y-2">
                   <Button className="w-full artisan-gradient hover:shadow-lg transition-all duration-300 text-white group/btn">
                     <Palette className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
-                    Discover Heritage
+                    Appreciate Artistry
                   </Button>
                   <Button variant="outline" size="sm" className="w-full border-stone-300 artisan-text-secondary hover:bg-stone-50 hover:border-primary/30">
                     <MessageCircle className="w-3 h-3 mr-1" />
