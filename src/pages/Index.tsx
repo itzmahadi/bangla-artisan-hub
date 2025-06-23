@@ -12,19 +12,19 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-gradient-to-br from-stone-50 via-amber-50/20 to-orange-50/30 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-amber-200/30 to-orange-200/30 rounded-full blur-xl artisan-floating"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-stone-200/30 to-amber-200/30 rounded-full blur-xl artisan-floating" style={{animationDelay: '2s'}}></div>
+      <section className="relative py-24 px-4 bg-gradient-to-br from-stone-50 via-orange-50/30 to-red-50/20 overflow-hidden">
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-orange-200/40 to-red-200/30 rounded-full blur-xl artisan-floating"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-stone-200/40 to-orange-200/30 rounded-full blur-xl artisan-floating" style={{animationDelay: '2s'}}></div>
         
         <div className="container mx-auto text-center relative z-10">
           <div className="mb-8">
-            <div className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-amber-100/80 to-orange-100/80 rounded-full mb-6 artisan-pulse backdrop-blur-sm">
+            <div className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-orange-100/90 to-red-100/80 rounded-full mb-6 artisan-pulse backdrop-blur-sm">
               <Palette className="h-10 w-10 text-primary" />
             </div>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 story-reveal">
             <span className="artisan-text-primary">Celebrating the Heart of</span>
-            <span className="block bg-gradient-to-r from-amber-800 to-orange-900 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-orange-800 to-red-900 bg-clip-text text-transparent">
               Bangladesh Artisans
             </span>
           </h1>
@@ -36,7 +36,7 @@ const Index = () => {
             <Button size="lg" asChild className="artisan-gradient hover:shadow-lg transition-all duration-300 text-white shadow-md interactive-glow">
               <Link to="/artisans">Meet Our Artisans</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-stone-300 artisan-text-primary hover:bg-stone-50 interactive-glow">
+            <Button size="lg" variant="outline" asChild className="border-stone-400 artisan-text-primary hover:bg-stone-50 interactive-glow">
               <Link to="/gallery">Explore Gallery</Link>
             </Button>
           </div>
@@ -50,7 +50,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-10">
             <Card className="artisan-card text-center border-0 shadow-lg craft-hover">
               <CardHeader className="pb-4">
-                <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 artisan-shimmer">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6 artisan-shimmer">
                   <Heart className="h-10 w-10 text-primary" />
                 </div>
                 <CardTitle className="text-xl artisan-text-primary">Joy & Passion</CardTitle>
@@ -64,7 +64,7 @@ const Index = () => {
 
             <Card className="artisan-card text-center border-0 shadow-lg craft-hover" style={{animationDelay: '0.1s'}}>
               <CardHeader className="pb-4">
-                <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 artisan-shimmer">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6 artisan-shimmer">
                   <Users className="h-10 w-10 text-primary" />
                 </div>
                 <CardTitle className="text-xl artisan-text-primary">Respect & Honor</CardTitle>
@@ -78,7 +78,7 @@ const Index = () => {
 
             <Card className="artisan-card text-center border-0 shadow-lg craft-hover" style={{animationDelay: '0.2s'}}>
               <CardHeader className="pb-4">
-                <div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 artisan-shimmer">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6 artisan-shimmer">
                   <MessageCircle className="h-10 w-10 text-primary" />
                 </div>
                 <CardTitle className="text-xl artisan-text-primary">Compassion & Support</CardTitle>
@@ -94,11 +94,11 @@ const Index = () => {
       </section>
 
       {/* Featured Artisans */}
-      <section className="py-20 px-4 bg-gradient-to-br from-stone-50 to-emerald-50/30">
+      <section className="py-20 px-4 bg-gradient-to-br from-stone-50 to-orange-50/20">
         <div className="container mx-auto">
           <div className="flex items-center justify-between mb-16">
             <h2 className="text-4xl font-bold artisan-text-primary">Master Craftspeople</h2>
-            <Button variant="outline" asChild className="border-stone-300 artisan-text-primary hover:bg-stone-50 interactive-glow">
+            <Button variant="outline" asChild className="border-stone-400 artisan-text-primary hover:bg-stone-50 interactive-glow">
               <Link to="/artisans">Meet All Artisans</Link>
             </Button>
           </div>
@@ -117,20 +117,20 @@ const Index = () => {
                         <img 
                           src={artisan.avatar} 
                           alt={artisan.name} 
-                          className="w-16 h-16 rounded-2xl object-cover ring-2 ring-stone-200 transition-transform duration-300 group-hover:scale-110" 
+                          className="w-16 h-16 rounded-2xl object-cover ring-2 ring-stone-300 transition-transform duration-300 group-hover:scale-110" 
                         />
-                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-full flex items-center justify-center artisan-pulse">
+                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-green-600 to-emerald-700 rounded-full flex items-center justify-center artisan-pulse">
                           <Brush className="h-3 w-3 text-white" />
                         </div>
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-lg artisan-text-primary group-hover:text-emerald-700 transition-colors">{artisan.name}</CardTitle>
+                        <CardTitle className="text-lg artisan-text-primary group-hover:text-green-700 transition-colors">{artisan.name}</CardTitle>
                         <div className="flex items-center space-x-2 text-sm artisan-text-muted mt-1">
                           <MapPin className="h-4 w-4" />
                           <span>{artisan.location}</span>
                         </div>
                         <div className="flex items-center space-x-1 mt-2">
-                          <Star className="h-4 w-4 fill-emerald-500 text-emerald-500" />
+                          <Star className="h-4 w-4 fill-orange-500 text-orange-500" />
                           <span className="text-sm font-medium artisan-text-secondary">{artisan.rating}</span>
                           <span className="text-xs artisan-text-muted">• Community Loved</span>
                         </div>
@@ -141,7 +141,7 @@ const Index = () => {
                     <p className="artisan-text-secondary text-sm mb-4 line-clamp-2 leading-relaxed">{artisan.bio}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {artisan.specialties.slice(0, 2).map(specialty => (
-                        <Badge key={specialty} variant="secondary" className="text-xs bg-emerald-50 text-emerald-800 border-emerald-200">
+                        <Badge key={specialty} variant="secondary" className="text-xs bg-green-50 text-green-800 border-green-200">
                           {specialty}
                         </Badge>
                       ))}
@@ -215,24 +215,24 @@ const Index = () => {
       </section>
 
       {/* Statistics */}
-      <section className="py-20 px-4 bg-gradient-to-br from-stone-50 to-amber-50/30">
+      <section className="py-20 px-4 bg-gradient-to-br from-stone-50 to-orange-50/30">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 artisan-text-primary">Our Growing Community</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center craft-hover">
-              <div className="text-5xl font-bold bg-gradient-to-r from-amber-700 to-orange-800 bg-clip-text text-transparent mb-2 artisan-pulse">150+</div>
+              <div className="text-5xl font-bold bg-gradient-to-r from-orange-700 to-red-800 bg-clip-text text-transparent mb-2 artisan-pulse">150+</div>
               <div className="artisan-text-secondary font-medium">Master Artisans</div>
             </div>
             <div className="text-center craft-hover">
-              <div className="text-5xl font-bold bg-gradient-to-r from-amber-700 to-orange-800 bg-clip-text text-transparent mb-2 artisan-pulse">2,500+</div>
+              <div className="text-5xl font-bold bg-gradient-to-r from-orange-700 to-red-800 bg-clip-text text-transparent mb-2 artisan-pulse">2,500+</div>
               <div className="artisan-text-secondary font-medium">Cultural Stories</div>
             </div>
             <div className="text-center craft-hover">
-              <div className="text-5xl font-bold bg-gradient-to-r from-amber-700 to-orange-800 bg-clip-text text-transparent mb-2 artisan-pulse">64</div>
+              <div className="text-5xl font-bold bg-gradient-to-r from-orange-700 to-red-800 bg-clip-text text-transparent mb-2 artisan-pulse">64</div>
               <div className="artisan-text-secondary font-medium">Districts Represented</div>
             </div>
             <div className="text-center craft-hover">
-              <div className="text-5xl font-bold bg-gradient-to-r from-amber-700 to-orange-800 bg-clip-text text-transparent mb-2 artisan-pulse">15k+</div>
+              <div className="text-5xl font-bold bg-gradient-to-r from-orange-700 to-red-800 bg-clip-text text-transparent mb-2 artisan-pulse">15k+</div>
               <div className="artisan-text-secondary font-medium">Community Members</div>
             </div>
           </div>
