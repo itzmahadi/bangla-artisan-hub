@@ -109,7 +109,9 @@
   }
   
   .artisan-card {
-    @apply bg-white/98 backdrop-blur-sm border border-stone-200/80 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:bg-white;
+    @apply bg-white backdrop-blur-sm border border-stone-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:bg-stone-50;
+    background-color: rgba(255, 255, 255, 0.98);
+    border-color: rgba(231, 219, 208, 0.8);
   }
   
   .artisan-text-primary {
