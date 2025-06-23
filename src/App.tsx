@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Artisans from "./pages/Artisans";
 import Gallery from "./pages/Gallery";
 import Events from "./pages/Events";
+import ArtisanProfile from "./pages/ArtisanProfile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/artisans" element={<Artisans />} />
+              <Route path="/artisan/:id" element={<ArtisanProfile />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/events" element={<Events />} />
               <Route path="*" element={<NotFound />} />

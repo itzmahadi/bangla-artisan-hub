@@ -94,7 +94,7 @@ const Index = () => {
       </section>
 
       {/* Featured Artisans */}
-      <section className="py-20 px-4 bg-gradient-to-br from-stone-50 to-amber-50/30">
+      <section className="py-20 px-4 bg-gradient-to-br from-stone-50 to-emerald-50/30">
         <div className="container mx-auto">
           <div className="flex items-center justify-between mb-16">
             <h2 className="text-4xl font-bold artisan-text-primary">Master Craftspeople</h2>
@@ -105,48 +105,54 @@ const Index = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {featuredArtisans.map((artisan, index) => (
-              <Card key={artisan.id} className="artisan-card group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden craft-hover" style={{animationDelay: `${index * 0.1}s`}}>
-                <CardHeader className="pb-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="relative">
-                      <img 
-                        src={artisan.avatar} 
-                        alt={artisan.name} 
-                        className="w-16 h-16 rounded-2xl object-cover ring-2 ring-stone-200 transition-transform duration-300 group-hover:scale-110" 
-                      />
-                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center artisan-pulse">
-                        <Brush className="h-3 w-3 text-white" />
+              <Link 
+                key={artisan.id} 
+                to={`/artisan/${artisan.id}`}
+                className="block transition-transform duration-300 hover:scale-105"
+              >
+                <Card className="artisan-card group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden craft-hover cursor-pointer" style={{animationDelay: `${index * 0.1}s`}}>
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="relative">
+                        <img 
+                          src={artisan.avatar} 
+                          alt={artisan.name} 
+                          className="w-16 h-16 rounded-2xl object-cover ring-2 ring-stone-200 transition-transform duration-300 group-hover:scale-110" 
+                        />
+                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-full flex items-center justify-center artisan-pulse">
+                          <Brush className="h-3 w-3 text-white" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <CardTitle className="text-lg artisan-text-primary group-hover:text-emerald-700 transition-colors">{artisan.name}</CardTitle>
+                        <div className="flex items-center space-x-2 text-sm artisan-text-muted mt-1">
+                          <MapPin className="h-4 w-4" />
+                          <span>{artisan.location}</span>
+                        </div>
+                        <div className="flex items-center space-x-1 mt-2">
+                          <Star className="h-4 w-4 fill-emerald-500 text-emerald-500" />
+                          <span className="text-sm font-medium artisan-text-secondary">{artisan.rating}</span>
+                          <span className="text-xs artisan-text-muted">• Community Loved</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <CardTitle className="text-lg artisan-text-primary">{artisan.name}</CardTitle>
-                      <div className="flex items-center space-x-2 text-sm artisan-text-muted mt-1">
-                        <MapPin className="h-4 w-4" />
-                        <span>{artisan.location}</span>
-                      </div>
-                      <div className="flex items-center space-x-1 mt-2">
-                        <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
-                        <span className="text-sm font-medium artisan-text-secondary">{artisan.rating}</span>
-                        <span className="text-xs artisan-text-muted">• Community Loved</span>
-                      </div>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="artisan-text-secondary text-sm mb-4 line-clamp-2 leading-relaxed">{artisan.bio}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {artisan.specialties.slice(0, 2).map(specialty => (
+                        <Badge key={specialty} variant="secondary" className="text-xs bg-emerald-50 text-emerald-800 border-emerald-200">
+                          {specialty}
+                        </Badge>
+                      ))}
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="artisan-text-secondary text-sm mb-4 line-clamp-2 leading-relaxed">{artisan.bio}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {artisan.specialties.slice(0, 2).map(specialty => (
-                      <Badge key={specialty} variant="secondary" className="text-xs bg-amber-50 text-amber-800 border-amber-200">
-                        {specialty}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-between text-sm artisan-text-muted">
-                    <span>{artisan.experience} experience</span>
-                    <span>{artisan.totalWorks} creations</span>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className="flex items-center justify-between text-sm artisan-text-muted">
+                      <span>{artisan.experience} experience</span>
+                      <span>{artisan.totalWorks} creations</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
