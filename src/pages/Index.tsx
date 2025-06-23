@@ -1,20 +1,18 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Calendar, Star, MapPin, Palette, Brush, Scissors, BookOpen, Camera, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { demoArtisans } from "@/data/artisans";
-
 const Index = () => {
   const featuredArtisans = demoArtisans.slice(0, 3);
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-gradient-to-br from-stone-50 via-orange-50/30 to-red-50/20 overflow-hidden">
+      <section className="relative py-24 px-4 bg-gradient-to-br from-stone-50 via-orange-50/30 to-red-50/20 overflow-hidden bg-gray-200">
         <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-orange-200/40 to-red-200/30 rounded-full blur-xl artisan-floating"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-stone-200/40 to-orange-200/30 rounded-full blur-xl artisan-floating" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-stone-200/40 to-orange-200/30 rounded-full blur-xl artisan-floating" style={{
+        animationDelay: '2s'
+      }}></div>
         
         <div className="container mx-auto text-center relative z-10">
           <div className="mb-8">
@@ -28,11 +26,15 @@ const Index = () => {
               Bangladesh Artisans
             </span>
           </h1>
-          <p className="text-xl artisan-text-secondary mb-10 max-w-3xl mx-auto leading-relaxed story-reveal" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl artisan-text-secondary mb-10 max-w-3xl mx-auto leading-relaxed story-reveal" style={{
+          animationDelay: '0.2s'
+        }}>
             A sanctuary where traditional crafts meet modern appreciation. Connect with master artisans, 
             explore their inspiring stories, and celebrate the rich cultural heritage of Bangladesh.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center story-reveal" style={{animationDelay: '0.4s'}}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center story-reveal" style={{
+          animationDelay: '0.4s'
+        }}>
             <Button size="lg" asChild className="artisan-gradient hover:shadow-lg transition-all duration-300 text-white shadow-md interactive-glow">
               <Link to="/artisans">Meet Our Artisans</Link>
             </Button>
@@ -55,14 +57,16 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-xl artisan-text-primary">Joy & Passion</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-stone-700">
                 <CardDescription className="artisan-text-secondary text-base leading-relaxed">
                   Celebrating the joy that artisans pour into their craft and the happiness their work brings to communities.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="artisan-card text-center border-0 shadow-lg craft-hover" style={{animationDelay: '0.1s'}}>
+            <Card className="artisan-card text-center border-0 shadow-lg craft-hover" style={{
+            animationDelay: '0.1s'
+          }}>
               <CardHeader className="pb-4">
                 <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6 artisan-shimmer">
                   <Users className="h-10 w-10 text-primary" />
@@ -76,7 +80,9 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="artisan-card text-center border-0 shadow-lg craft-hover" style={{animationDelay: '0.2s'}}>
+            <Card className="artisan-card text-center border-0 shadow-lg craft-hover" style={{
+            animationDelay: '0.2s'
+          }}>
               <CardHeader className="pb-4">
                 <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6 artisan-shimmer">
                   <MessageCircle className="h-10 w-10 text-primary" />
@@ -104,21 +110,14 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {featuredArtisans.map((artisan, index) => (
-              <Link 
-                key={artisan.id} 
-                to={`/artisan/${artisan.id}`}
-                className="block transition-transform duration-300 hover:scale-105"
-              >
-                <Card className="artisan-card group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden craft-hover cursor-pointer" style={{animationDelay: `${index * 0.1}s`}}>
+            {featuredArtisans.map((artisan, index) => <Link key={artisan.id} to={`/artisan/${artisan.id}`} className="block transition-transform duration-300 hover:scale-105">
+                <Card className="artisan-card group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden craft-hover cursor-pointer" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <CardHeader className="pb-4">
                     <div className="flex items-center space-x-4">
                       <div className="relative">
-                        <img 
-                          src={artisan.avatar} 
-                          alt={artisan.name} 
-                          className="w-16 h-16 rounded-2xl object-cover ring-2 ring-stone-300 transition-transform duration-300 group-hover:scale-110" 
-                        />
+                        <img src={artisan.avatar} alt={artisan.name} className="w-16 h-16 rounded-2xl object-cover ring-2 ring-stone-300 transition-transform duration-300 group-hover:scale-110" />
                         <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-green-600 to-emerald-700 rounded-full flex items-center justify-center artisan-pulse">
                           <Brush className="h-3 w-3 text-white" />
                         </div>
@@ -140,11 +139,9 @@ const Index = () => {
                   <CardContent className="pt-0">
                     <p className="artisan-text-secondary text-sm mb-4 line-clamp-2 leading-relaxed">{artisan.bio}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {artisan.specialties.slice(0, 2).map(specialty => (
-                        <Badge key={specialty} variant="secondary" className="text-xs bg-green-50 text-green-800 border-green-200">
+                      {artisan.specialties.slice(0, 2).map(specialty => <Badge key={specialty} variant="secondary" className="text-xs bg-green-50 text-green-800 border-green-200">
                           {specialty}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
                     <div className="flex items-center justify-between text-sm artisan-text-muted">
                       <span>{artisan.experience} experience</span>
@@ -152,8 +149,7 @@ const Index = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </Link>
-            ))}
+              </Link>)}
           </div>
         </div>
       </section>
@@ -242,7 +238,9 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-24 px-4 artisan-gradient text-white relative overflow-hidden">
         <div className="absolute top-10 right-10 w-40 h-40 bg-white/10 rounded-full blur-xl artisan-floating"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl artisan-floating" style={{animationDelay: '3s'}}></div>
+        <div className="absolute bottom-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl artisan-floating" style={{
+        animationDelay: '3s'
+      }}></div>
         
         <div className="container mx-auto text-center relative z-10">
           <div className="inline-flex items-center justify-center p-4 bg-white/10 rounded-full mb-8 artisan-pulse backdrop-blur-sm">
@@ -264,8 +262,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
